@@ -1,4 +1,4 @@
-from init import app
+from app.init import app
 
 
 @app.route("/hello")
