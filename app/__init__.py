@@ -1,9 +1,8 @@
-# coding=utf-8
 from flask import Flask
+from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-
 app.config.from_object('config')
-# Не знаю почему но если импорт находится
-# наверху, крашится с ошибкой ImportError: cannot import name app
-import views
+db = SQLAlchemy(app)
+
+from app import views, models
